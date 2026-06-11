@@ -24,6 +24,10 @@ public class OrderController {
     public OrderDTO placeOrder(@PathVariable Long userId, @RequestBody OrderRequest orderRequest) {
         return orderService.placeOrder(userId, orderRequest.getProductQuantities(), orderRequest.getTotalAmount());
     }
+    @GetMapping("/test")
+    public String test() {
+        return "Working";
+    }
 
     // Get all orders
     @GetMapping("/all-orders")
